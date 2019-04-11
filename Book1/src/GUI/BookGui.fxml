@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.BookController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <TableView fx:id="table_Book" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="图书编号" />
+                <TableColumn prefWidth="75.0" text="图书名称" />
+                  <TableColumn prefWidth="75.0" text="图书分类" />
+                  <TableColumn prefWidth="75.0" text="价格" />
+                  <TableColumn prefWidth="75.0" text="作者" />
+                  <TableColumn prefWidth="75.0" text="出版商" />
+                  <TableColumn prefWidth="75.0" text="出版日期" />
+                  <TableColumn prefWidth="75.0" text="入库日期" />
+                  <TableColumn prefWidth="75.0" text="库存量" />
+                  <TableColumn prefWidth="75.0" text="现存量" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="900.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Back" text="返回" />
+                  <Label text="搜索栏" />
+                  <TextField fx:id="text_search" />
+                  <RadioButton fx:id="rbtn_BookNo" mnemonicParsing="false" selected="true" text="编号搜索">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="booktoggle" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbtn_BookName" mnemonicParsing="false" text="名称搜索" textOverrun="CLIP" toggleGroup="$booktoggle" />
+                  <Button fx:id="btn_search" mnemonicParsing="false" onAction="#Search" text="搜索" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="346.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Reflash" text="刷新" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <bottom>
+            <Pagination fx:id="page" pageCount="1" prefHeight="50.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+         </bottom></BorderPane>
+   </children>
+</AnchorPane>

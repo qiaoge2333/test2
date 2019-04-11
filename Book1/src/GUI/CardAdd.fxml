@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="382.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.CardAddController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="382.0" prefWidth="353.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="88.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="178.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="266.0" spacing="20.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="submit" mnemonicParsing="false" onAction="#Submit" text="提交" />
+                  <Button mnemonicParsing="false" onAction="#Exit" text="取消" />
+               </children>
+            </HBox>
+            <Label text="用户名" />
+            <Label text="邮箱" GridPane.rowIndex="1" />
+            <Label text="手机号" GridPane.rowIndex="2" />
+            <TextField fx:id="CardName" promptText="用户名在20位以内" GridPane.columnIndex="1" />
+            <TextField fx:id="Mail" promptText="xxxxx@xx.xxx 50位以内" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="Phone" promptText="11位手机号" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </GridPane>
+   </children>
+</AnchorPane>

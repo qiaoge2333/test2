@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.BorrowbookController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <TableView fx:id="table_borrowbook" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="ID" />
+                <TableColumn prefWidth="75.0" text="图书编号" />
+                  <TableColumn prefWidth="75.0" text="借书卡编号" />
+                  <TableColumn prefWidth="75.0" text="出借日期" />
+                  <TableColumn prefWidth="75.0" text="归还日期" />
+                  <TableColumn prefWidth="75.0" text="是否归还" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="823.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Back" text="返回" />
+                  <Label text="搜索栏" />
+                  <TextField fx:id="text_search" />
+                  <RadioButton fx:id="rbtn_BookNo" mnemonicParsing="false" selected="true" text="图书编号">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="search" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbtn_CardNo" mnemonicParsing="false" text="借书卡编号" toggleGroup="$search" />
+                  <CheckBox fx:id="hasBorrow" mnemonicParsing="false" text="未归还？" />
+                  <Button fx:id="btn_search" mnemonicParsing="false" onAction="#Search" text="搜索" />
+                  <Label text="      " />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#Reflash" text="刷新" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <bottom>
+            <Pagination fx:id="page" pageCount="1" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

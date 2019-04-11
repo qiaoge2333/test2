@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.AdminController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="900.0">
+         <center>
+            <TableView fx:id="table_Admin" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="75.0" text="账号编号" />
+                <TableColumn prefWidth="75.0" text="用户名" />
+                  <TableColumn prefWidth="75.0" text="密码" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="900.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Back" text="返回" />
+                  <Label text="搜索栏" />
+                  <TextField fx:id="text_search" />
+                  <RadioButton fx:id="rbtn_No" mnemonicParsing="false" selected="true" text="编号搜索">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="admintoggle" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbtn_UserName" mnemonicParsing="false" text="名称搜索" textOverrun="CLIP" toggleGroup="$admintoggle" />
+                  <Button fx:id="btn_search" mnemonicParsing="false" onAction="#Search" text="搜索" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="346.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#ReFlash" text="刷新" textAlignment="JUSTIFY" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </top>
+         <bottom>
+            <Pagination fx:id="page" maxPageIndicatorCount="1" pageCount="1" prefHeight="50.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
+         </bottom></BorderPane>
+   </children>
+</AnchorPane>
